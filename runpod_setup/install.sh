@@ -1,11 +1,13 @@
 
-git clone https://github.com/InternRobotics/G2VLM
-cd G2VLM
+git clone https://github.com/ushariRanasinghe/G2VLM
+
+apt update
+apt install unzip
 # conda create -n g2vlm python=3.10 -y
 # conda activate g2vlm
 
 pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
-pip install -r requirements.txt
+pip install -r /workspace/G2VLM/requirements.txt
 
 pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.5cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 
@@ -28,7 +30,7 @@ export PYTHONPATH=/workspace/G2VLM/modeling:$PYTHONPATH
 pip install easydict 
 pip install --ignore-installed blinker
 pip install open3d
-
-python inference_recon.py --model_path /workspace/models/G2VLM-2B-MoT
+pip install openpyxl
+# python inference_recon.py --model_path /workspace/models/G2VLM-2B-MoT
 
 # use python inference_recon.py --model-path /workspace/models/G2VLM-2B-MoT to run the spatial reasoning demo
